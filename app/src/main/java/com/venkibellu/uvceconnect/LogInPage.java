@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -13,6 +14,7 @@ import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.Auth;
@@ -46,7 +48,7 @@ public class LogInPage extends AppCompatActivity implements View.OnClickListener
                 .build();
         signInButton=(SignInButton)findViewById(R.id.google_login_button);
         signInButton.setOnClickListener(this);
-
+        FacebookSdk.sdkInitialize(getApplicationContext());
         homepageIntent = new Intent(this, HomePage.class);
         loginButton = (LoginButton) findViewById(R.id.fb_login_button);
         callbackManager = CallbackManager.Factory.create();
@@ -59,6 +61,7 @@ public class LogInPage extends AppCompatActivity implements View.OnClickListener
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
+                Log.e("FACEBOOK","SignInSuccess");
                 startActivity(homepageIntent);
                 finish();
             }
@@ -130,5 +133,11 @@ public class LogInPage extends AppCompatActivity implements View.OnClickListener
         {
             Toast.makeText(getApplicationContext(),"Google Sign In Failure",Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void bypass(View v)
+    {
+        startActivity(homepageIntent);
+        finish();
     }
 }
