@@ -36,18 +36,20 @@ public class LogInPage extends AppCompatActivity {
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
+                Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
                 startActivity(homepageIntent);
                 finish();
             }
 
             @Override
             public void onCancel() {
-                Toast.makeText(getApplicationContext(), "Facebook LogIn Cancelled", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Facebook Login Cancelled", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onError(FacebookException error) {
 
+                Toast.makeText(getApplicationContext(), "Facebook Login Error", Toast.LENGTH_SHORT).show();
             }
         });
 
