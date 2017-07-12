@@ -18,14 +18,6 @@
         android:src="@mipmap/news"/>
 
     <ImageView
-        android:id="@+id/syllabus"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_below="@+id/newsfeed"
-        android:src="@mipmap/syllabus"
-        android:layout_marginTop="50dp"/>
-
-    <ImageView
         android:id="@+id/campus_says"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -42,6 +34,15 @@
         android:src="@mipmap/qpaper"
         android:layout_alignTop="@+id/syllabus"
         android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/syllabus"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/syllabus"
+        android:layout_marginTop="48dp"
+        android:layout_below="@+id/newsfeed"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>
