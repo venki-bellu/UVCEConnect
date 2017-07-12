@@ -31,11 +31,14 @@ public class LogInPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in_page);
 
-
         homepageIntent = new Intent(this, HomePage.class);
         loginButton = (LoginButton) findViewById(R.id.fb_login_button);
         callbackManager = CallbackManager.Factory.create();
 
+
+        if (isLoggedIn()) {
+            startActivity(homepageIntent);
+        }
 
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -63,10 +66,11 @@ public class LogInPage extends AppCompatActivity {
             callbackManager.onActivityResult(requestCode, resultCode, data);
         }
 
-    public void bypass(View v)
-    {
-        startActivity(homepageIntent);
-        finish();
+
+    // if already logged in accessToken will not be null
+    public boolean isLoggedIn() {
+        AccessToken accessToken = AccessToken.getCurrentAccessToken();
+        return accessToken != null;
     }
 
 }
