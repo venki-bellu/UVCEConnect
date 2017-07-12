@@ -10,6 +10,7 @@
     <string name="branch">Branch</string>
     <string name="semester">Semester</string>
     <string name="Year">Year</string>
+    <string name="continue_to_be_removed_at_release">Continue(TO be removed at release)</string>
 
     <string-array name="branch_array">
         <item>CE</item>
