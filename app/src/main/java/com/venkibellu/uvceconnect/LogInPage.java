@@ -40,6 +40,7 @@ public class LogInPage extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_log_in_page);
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
@@ -48,20 +49,23 @@ public class LogInPage extends AppCompatActivity implements View.OnClickListener
                 .build();
         signInButton=(SignInButton)findViewById(R.id.google_login_button);
         signInButton.setOnClickListener(this);
-        FacebookSdk.sdkInitialize(getApplicationContext());
+
         homepageIntent = new Intent(this, HomePage.class);
         loginButton = (LoginButton) findViewById(R.id.fb_login_button);
         callbackManager = CallbackManager.Factory.create();
 
 
        if (isLoggedIn()) {
+
             startActivity(homepageIntent);
+           finish();
         }
 
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 Log.e("FACEBOOK","SignInSuccess");
+
                 startActivity(homepageIntent);
                 finish();
             }
@@ -114,7 +118,7 @@ public class LogInPage extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
+        callbackManager.onActivityResult(requestCode, resultCode, data);
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
@@ -140,4 +144,6 @@ public class LogInPage extends AppCompatActivity implements View.OnClickListener
         startActivity(homepageIntent);
         finish();
     }
+
+
 }

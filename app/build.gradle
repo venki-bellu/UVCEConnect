@@ -11,6 +11,7 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -30,6 +31,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    apply plugin: 'com.google.gms.google-services'
     compile 'com.android.support:multidex:1.0.0'
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.facebook.android:facebook-android-sdk:4.24.0'
