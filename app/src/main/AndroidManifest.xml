@@ -23,10 +23,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".LogInPage"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".HomePage"></activity>
+        <activity android:name=".HomePage" />
+
+        <activity
+            android:name=".AcademicActivity"
+            android:label="Syllabus">
+        </activity>
     </application>
 
 </manifest>

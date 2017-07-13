@@ -18,5 +18,21 @@
       android:id="@+id/fb_login_button"
       android:layout_centerHorizontal="true"/>
 
+  <com.google.android.gms.common.SignInButton
+      android:id="@+id/google_login_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+      android:layout_below="@+id/fb_login_button"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="20dp"/>
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Continue(TO be removed at release)"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:onClick="bypass"/>
+
 
 </RelativeLayout>

@@ -23,22 +23,23 @@
         android:layout_height="150dp"
         android:layout_below="@+id/newsfeed"
         android:src="@mipmap/syllabus"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="50dp"
+        android:onClick="onSyllabusImageViewClicked"/>
 
     <ImageView
         android:id="@+id/campus_says"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
         android:src="@mipmap/campus_says"
-        android:layout_toRightOf="@+id/newsfeed"
+        android:layout_toEndOf="@+id/newsfeed"
       />
 
     <ImageView
         android:id="@+id/question_papers"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
         android:src="@mipmap/qpaper"
         android:layout_alignTop="@+id/syllabus"
         android:layout_alignParentEnd="true" />
