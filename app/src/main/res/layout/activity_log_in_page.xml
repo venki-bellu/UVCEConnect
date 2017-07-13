@@ -11,13 +11,6 @@
     tools:context="com.venkibellu.uvceconnect.LogInPage">
 
 
-
-  <com.facebook.login.widget.LoginButton
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:id="@+id/fb_login_button"
-      android:layout_centerHorizontal="true"/>
-
   <com.google.android.gms.common.SignInButton
       android:id="@+id/google_login_button"
     android:layout_width="wrap_content"
@@ -33,6 +26,13 @@
     android:layout_alignParentBottom="true"
     android:layout_centerHorizontal="true"
     android:onClick="bypass"/>
+
+  <com.facebook.login.widget.LoginButton
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/fb_login_button"
+      android:layout_alignParentTop="true"
+      android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
