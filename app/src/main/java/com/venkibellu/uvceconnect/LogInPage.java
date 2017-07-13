@@ -24,7 +24,9 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 
-public class LogInPage extends AppCompatActivity implements View.OnClickListener,GoogleApiClient.OnConnectionFailedListener {
+public class LogInPage
+        extends AppCompatActivity
+        implements View.OnClickListener,GoogleApiClient.OnConnectionFailedListener {
 
     private static final int RC_SIGN_IN = 9001;
     LoginButton loginButton;
@@ -85,7 +87,6 @@ public class LogInPage extends AppCompatActivity implements View.OnClickListener
     }
 
 
-
     // if already logged in accessToken will not be null
     public boolean isLoggedIn() {
         AccessToken accessToken = AccessToken.getCurrentAccessToken();
@@ -126,24 +127,18 @@ public class LogInPage extends AppCompatActivity implements View.OnClickListener
         }
     }
 
-    private void handleSignInResult(GoogleSignInResult result)
-    {
-        if(result.isSuccess())
-        {
+    private void handleSignInResult(GoogleSignInResult result) {
+        if(result.isSuccess()) {
             startActivity(homepageIntent);
             finish();
         }
-        else
-        {
+        else {
             Toast.makeText(getApplicationContext(),"Google Sign In Failure",Toast.LENGTH_LONG).show();
         }
     }
 
-    public void bypass(View v)
-    {
+    public void bypass(View v) {
         startActivity(homepageIntent);
         finish();
     }
-
-
 }

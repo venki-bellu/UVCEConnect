@@ -14,12 +14,12 @@
     <string name="continue_to_be_removed_at_release">Continue(TO be removed at release)</string>
 
     <string-array name="branch_array">
-        <item>CE</item>
-        <item>CSE</item>
-        <item>ECE</item>
-        <item>EEE</item>
-        <item>ISE</item>
-        <item>ME</item>
+        <item>Civil Engineering</item>
+        <item>Computer Science and Engineering</item>
+        <item>Electronics and Communication Engineering</item>
+        <item>Electronic and Electrical Engineering</item>
+        <item>Information Science and Engineering</item>
+        <item>Mechanical Engineering</item>
     </string-array>
 
     <string-array name="year_array">
